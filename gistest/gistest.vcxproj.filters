@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\icon">
+      <UniqueIdentifier>{d5631179-5423-4aa2-8eb9-e559b165def5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Store.h">
+      <UniqueIdentifier>{b665d3f8-4d4c-4a22-8b07-edd637b83740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vec.h">
+      <UniqueIdentifier>{a23b2149-4c1e-4d15-8957-bba1fd4fbf1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Raster.h">
+      <UniqueIdentifier>{af8edc9c-22d8-4745-82f3-fd40ecc904f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Command.h">
+      <UniqueIdentifier>{6dfe00c5-eaa4-44d0-bbea-1ef7528cb357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Store.cpp">
+      <UniqueIdentifier>{41126251-9936-4d9f-8ab1-0eecd2b0c4b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vec.cpp">
+      <UniqueIdentifier>{f37d5476-f81e-49e1-9693-57c3b64872c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Raster.cpp">
+      <UniqueIdentifier>{c460b3cb-2e17-467a-87bc-26b70c8176c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Command.cpp">
+      <UniqueIdentifier>{37f4bc13-bb77-4946-bda9-106aa7fe5707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RockAna Files">
+      <UniqueIdentifier>{b423db78-e117-4698-bc8b-9d95bb00cb30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="gistest.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="gistest.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files\Store.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Source Files\Store.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>Source Files\Store.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="LineString.cpp">
+      <Filter>Source Files\Store.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferDialog.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="drawVec.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="geometryRelation.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="myGraphicsView.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="store_read_TIF.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_histogram.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="vecReader.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinate.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="GISlog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHullCalculator.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferAnalyzer.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="OverlayAnalysis.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCut.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="editSave.cpp">
+      <Filter>Source Files\Command.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="editCancel.cpp">
+      <Filter>Source Files\Command.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="coverFun.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="writeVec.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dbConnectDialog.cpp">
+      <Filter>Source Files\Vec.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="TIFShowdialog.cpp">
+      <Filter>Source Files\Raster.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Rock.cpp">
+      <Filter>RockAna Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BufferDialog.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </QtMoc>
+    <QtMoc Include="myGraphicsView.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </QtMoc>
+    <QtMoc Include="dbConnectDialog.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </QtMoc>
+    <QtMoc Include="coverFun.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </QtMoc>
+    <QtMoc Include="Rock.h">
+      <Filter>RockAna Files</Filter>
+    </QtMoc>
+    <QtMoc Include="myDialog.h">
+      <Filter>RockAna Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LineString.h">
+      <Filter>Header Files\Store.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Header Files\Store.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Header Files\Store.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>Header Files\Store.h</Filter>
+    </ClInclude>
+    <ClInclude Include="drawVec.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="geometryRelation.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="vecReader.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_histogram.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </ClInclude>
+    <ClInclude Include="store_read_TIF.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </ClInclude>
+    <ClInclude Include="writeVec.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </ClInclude>
+    <ClInclude Include="GISlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHullCalculator.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferAnalyzer.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="OverlayAnalysis.h">
+      <Filter>Header Files\Vec.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCut.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>Header Files\Command.h</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteControl.h">
+      <Filter>Header Files\Command.h</Filter>
+    </ClInclude>
+    <ClInclude Include="themeSwitch.h">
+      <Filter>Header Files\Command.h</Filter>
+    </ClInclude>
+    <ClInclude Include="editSave.h">
+      <Filter>Header Files\Command.h</Filter>
+    </ClInclude>
+    <ClInclude Include="editCancel.h">
+      <Filter>Header Files\Command.h</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TIFshowDialog.h">
+      <Filter>Header Files\Raster.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="1.jpg">
+      <Filter>Resource Files\icon</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lightgreen.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="nightmode.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pinkmode.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="gistest.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

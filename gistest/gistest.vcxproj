@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83AE12D7-BE3C-4341-BF1B-693F4D6A3381}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>6.63_msvc_2019</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>6.6.1_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets;opengl;sql</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+    <QMakeCodeLines>
+    </QMakeCodeLines>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>./thirdlib/geos/include;./thirdlib/SQLite-3.46.0/include;./thirdlib/rapidjson-master/include/rapidjson;./thirdlib/proj-9.3.0/include;./thirdlib/gdal2.0.2/include;$(IncludePath)</IncludePath>
+    <LibraryPath>./thirdlib/geos/lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>./thirdlib/exiv2-0.28.3-2019msvc64/include;./thirdlib/log4cpp/include;./thirdlib/gdal2.0.2/include;./thirdlib/geos/include;./thirdlib/rapidjson-master/include/rapidjson;./thirdlib/proj-9.3.0/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>./thirdlib/log4cpp/release;./thirdlib/gdal2.0.2/lib;./thirdlib/proj-9.3.0/lib;./thirdlib/SQLite-3.46.0/lib;./thirdlib/geos/lib;./thirdlib/exiv2-0.28.3-2019msvc64/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>./thirdlib/gdal2.0.2/lib/gdal_i.lib;./thirdlib/proj-9.3.0/lib/proj.lib;./thirdlib/SQLite-3.46.0/lib/sqlite.lib;./thirdlib/geos/lib/geos.lib;./thirdlib/log4cpp/release/log4cpp.lib;./thirdlib/exiv2-0.28.3-2019msvc64/lib/exiv2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>./thirdlib/geos/lib;./thirdlib/SQLite-3.46.0/lib;./thirdlib/proj-9.3.0/lib;./thirdlib/gdal2.0.2/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>./thirdlib/gdal2.0.2/lib;./thirdlib/geosb;./thirdlib/SQLite-3.46.0b;./thirdlib/proj-9.3.0b;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\thirdlib\gdal2.0.2\include;D:\thirdlib\libxml2\include;D:\thirdlib\log4cpp-1.1.4\include;D:\thirdlib\proj-9.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BufferAnalyzer.cpp" />
+    <ClCompile Include="BufferDialog.cpp" />
+    <ClCompile Include="ConvexHullCalculator.cpp" />
+    <ClCompile Include="Coordinate.cpp" />
+    <ClCompile Include="coverFun.cpp" />
+    <ClCompile Include="dbConnectDialog.cpp" />
+    <ClCompile Include="drawVec.cpp" />
+    <ClCompile Include="draw_histogram.cpp" />
+    <ClCompile Include="editCancel.cpp" />
+    <ClCompile Include="editSave.cpp" />
+    <ClCompile Include="geometryRelation.cpp" />
+    <ClCompile Include="GISlog.cpp" />
+    <ClCompile Include="ImageCut.cpp" />
+    <ClCompile Include="LineString.cpp" />
+    <ClCompile Include="mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="myGraphicsView.cpp" />
+    <ClCompile Include="OverlayAnalysis.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="Rock.cpp" />
+    <ClCompile Include="TIFShowdialog.cpp" />
+    <ClCompile Include="vecReader.cpp" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="store_read_TIF.cpp" />
+    <ClCompile Include="writeVec.cpp" />
+    <QtRcc Include="gistest.qrc" />
+    <QtUic Include="gistest.ui" />
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainwindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BufferAnalyzer.h" />
+    <ClInclude Include="command.h" />
+    <ClInclude Include="ConvexHullCalculator.h" />
+    <ClInclude Include="Coordinate.h" />
+    <QtMoc Include="coverFun.h" />
+    <QtMoc Include="dbConnectDialog.h" />
+    <ClInclude Include="editCancel.h" />
+    <ClInclude Include="editSave.h" />
+    <ClInclude Include="GISlog.h" />
+    <ClInclude Include="ImageCut.h" />
+    <QtMoc Include="myDialog.h" />
+    <ClInclude Include="OverlayAnalysis.h" />
+    <ClInclude Include="RemoteControl.h" />
+    <ClInclude Include="resource.h" />
+    <QtMoc Include="Rock.h" />
+    <ClInclude Include="store_read_TIF.h" />
+    <ClInclude Include="themeSwitch.h" />
+    <ClInclude Include="TIFshowDialog.h" />
+    <ClInclude Include="writeVec.h" />
+    <QtMoc Include="BufferDialog.h" />
+    <ClInclude Include="drawVec.h" />
+    <ClInclude Include="draw_histogram.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="geometryRelation.h" />
+    <ClInclude Include="LineString.h" />
+    <QtMoc Include="myGraphicsView.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="vecReader.h" />
+    <ClInclude Include="Store.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lightgreen.qss" />
+    <None Include="nightmode.qss" />
+    <None Include="pinkmode.qss" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="gistest.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
